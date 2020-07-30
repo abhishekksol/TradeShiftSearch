@@ -8,7 +8,6 @@ const SearchResult = (props: any) => {
     const [results, setresults] = useState([]);
 
     const filterData = (values:Array<any>) => {
-        console.log(values);
         setresults(values.filter((value: any) => {
             const companyname = value.name.toLowerCase();
             // FILTER LOGIC ACCORDING TO COUNTRIES

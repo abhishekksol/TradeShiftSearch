@@ -13,7 +13,7 @@ const ResultView = (props: any) => {
         <div className="result-container container">
             <div className="result-wrapper">
                 <div className="result-heading-box">
-                    <h3 className="result-heading result-heading-primary">ACME inc.</h3>
+                    <h3 className="result-heading result-heading-primary">{user.name}</h3>
                     <h5 className="result-heading result-heading-status-title">{LABEL_COMPANY_STATUS}: <span className={"result-heading-status " + (user.status === "active" ? "active" : "inactive")}>{user.status === "active" ? "ACTIVE" : "INACTIVE"}</span></h5>
                 </div>
                 <ul className="result-list">

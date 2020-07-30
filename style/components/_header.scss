@@ -1,0 +1,25 @@
+.header {
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        background-color: $header-bg;
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    &-logo {
+        height: 2.25rem;
+        width: auto;
+        &-box {
+            display: flex;
+        }
+    }
+
+    &-title {
+        margin: 0;
+        font-size: 1.15rem;
+        &-box {
+            margin-left: 1rem;
+        }
+    }
+}

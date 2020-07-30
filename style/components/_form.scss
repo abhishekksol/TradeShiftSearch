@@ -1,0 +1,21 @@
+.form {
+    &-container {}
+
+    &-input {
+        &-box {
+            margin-left: -10px;
+            margin-right: -10px;
+            clear: both;
+        }
+
+        &-select {
+            float: left;
+            width: 30%;
+        }
+        
+        &-search {
+            float: left;
+            width: 70%;
+        }
+    }
+}

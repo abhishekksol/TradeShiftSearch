@@ -1,0 +1,10 @@
+@mixin container {
+    margin: 0 auto;
+    padding: map-get($container-spacing, vertical-mobile) map-get($container-spacing, mobile-horizontal);
+    width: 100%;
+    @include media(desktop) {
+        padding-left: map-get($container-spacing, horizontal);
+        padding-right: map-get($container-spacing, horizontal);
+        max-width: map-get($container-spacing, width);
+    }
+}

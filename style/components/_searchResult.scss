@@ -1,0 +1,14 @@
+.searchresult {
+    &-container {
+    }
+    
+    &-wrapper {
+        .ts-board {
+            margin-bottom: 0;
+            &:last-child {
+                height: 25rem;
+                overflow: auto;            
+            }
+        }
+    }
+}

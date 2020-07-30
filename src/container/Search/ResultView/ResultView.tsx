@@ -17,42 +17,60 @@ const ResultView = (props: any) => {
                     <h5 className="result-heading result-heading-status-title">{LABEL_COMPANY_STATUS}: <span className={"result-heading-status " + (user.status === "active" ? "active" : "inactive")}>{user.status === "active" ? "ACTIVE" : "INACTIVE"}</span></h5>
                 </div>
                 <ul className="result-list">
-                    <li className="result-item">
-                        <h6 className="result-item-content">
-                            <span className="result-item-title">{LABEL_REGNUMBER}</span>
-                            <span className="result-item-description">{user.registrationNumber}</span>
-                        </h6>
-                    </li>
-                    <li className="result-item">
-                        <h6 className="result-item-content">
-                            <span className="result-item-title">{LABEL_VAT}</span>
-                            <span className="result-item-description">{user.vatNumber}</span>
-                        </h6>
-                    </li>
-                    <li className="result-item">
-                        <h6 className="result-item-content">
-                            <span className="result-item-title">{LABEL_ADDRESS}</span>
-                            <span className="result-item-description">{user.address}</span>
-                        </h6>
-                    </li>
-                    <li className="result-item">
-                        <h6 className="result-item-content">
-                            <span className="result-item-title">{LABEL_COUNTRY}</span>
-                            <span className="result-item-description">{user.country}</span>
-                        </h6>
-                    </li>
-                    <li className="result-item">
-                        <h6 className="result-item-content">
-                            <span className="result-item-title">{LABEL_STATUS}</span>
-                            <span className="result-item-description" dangerouslySetInnerHTML={{ __html: user.additionalStatusDetails.join("<br/>") }}></span>
-                        </h6>
-                    </li>
-                    <li className="result-item">
-                        <h6 className="result-item-content">
-                            <span className="result-item-title">{LABEL_COMPANY}</span>
-                            <span className="result-item-description">{user.description}</span>
-                        </h6>
-                    </li>
+                    {
+                        user.registrationNumber &&
+                        <li className="result-item">
+                            <h6 className="result-item-content">
+                                <span className="result-item-title">{LABEL_REGNUMBER}</span>
+                                <span className="result-item-description">{user.registrationNumber}</span>
+                            </h6>
+                        </li>
+                    }
+                    {
+                        user.vatNumber &&
+                        <li className="result-item">
+                            <h6 className="result-item-content">
+                                <span className="result-item-title">{LABEL_VAT}</span>
+                                <span className="result-item-description">{user.vatNumber}</span>
+                            </h6>
+                        </li>
+                    }
+                    {
+                        user.address &&
+                        <li className="result-item">
+                            <h6 className="result-item-content">
+                                <span className="result-item-title">{LABEL_ADDRESS}</span>
+                                <span className="result-item-description">{user.address}</span>
+                            </h6>
+                        </li>
+                    }
+                    {
+                        user.country &&
+                        <li className="result-item">
+                            <h6 className="result-item-content">
+                                <span className="result-item-title">{LABEL_COUNTRY}</span>
+                                <span className="result-item-description">{user.country}</span>
+                            </h6>
+                        </li>
+                    }
+                    {
+                        user.additionalStatusDetails && Array.isArray(user.additionalStatusDetails) &&
+                        <li className="result-item">
+                            <h6 className="result-item-content">
+                                <span className="result-item-title">{LABEL_STATUS}</span>
+                                <span className="result-item-description" dangerouslySetInnerHTML={{ __html: user.additionalStatusDetails.join("<br/>") }}></span>
+                            </h6>
+                        </li>
+                    }
+                    {
+                        user.description &&
+                        <li className="result-item">
+                            <h6 className="result-item-content">
+                                <span className="result-item-title">{LABEL_COMPANY}</span>
+                                <span className="result-item-description">{user.description}</span>
+                            </h6>
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
